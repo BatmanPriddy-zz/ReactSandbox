@@ -21,42 +21,36 @@ class Contact extends Component {
           const { dispatch } = value;
 
           return (
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="card mb-3">
-                    <div className="card-body">
-                      <h4>
-                        {name}{' '}
-                        <i
-                          onClick={() =>
-                            this.setState({
-                              showContactInfo: !this.state.showContactInfo
-                            })
-                          }
-                          className="fas fa-sort-down"
-                          style={{ cursor: 'pointer' }}
-                        />
-                        <i
-                          className="fas fa-times"
-                          style={{
-                            cursor: 'pointer',
-                            float: 'right',
-                            color: 'red'
-                          }}
-                          onClick={this.onDeleteClick.bind(this, id, dispatch)}
-                        />
-                      </h4>
+            <div className="card mb-3">
+              <div className="card-body">
+                <h4>
+                  {name}{' '}
+                  <i
+                    onClick={() =>
+                      this.setState({
+                        showContactInfo: !this.state.showContactInfo
+                      })
+                    }
+                    className="fas fa-sort-down"
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <i
+                    className="fas fa-times"
+                    style={{
+                      cursor: 'pointer',
+                      float: 'right',
+                      color: 'red'
+                    }}
+                    onClick={this.onDeleteClick.bind(this, id, dispatch)}
+                  />
+                </h4>
 
-                      {showContactInfo ? (
-                        <ul className="list-group">
-                          <li className="list-group-item">Email: {email}</li>
-                          <li className="list-group-item">Phone: {phone}</li>
-                        </ul>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
+                {showContactInfo ? (
+                  <ul className="list-group">
+                    <li className="list-group-item">Email: {email}</li>
+                    <li className="list-group-item">Phone: {phone}</li>
+                  </ul>
+                ) : null}
               </div>
             </div>
           );
